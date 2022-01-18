@@ -6,7 +6,7 @@ class GamesController < ApplicationController
   end
 
   def score
-    @letters = Array.new(10) { ('A'..'Z').to_a.sample }
+    @letters = params[:letters]
     @word = params[:word].upcase
     @included = included?(@word, @letters)
     @english_word = english_word?(@word)
